@@ -1,1 +1,0 @@
-Vídeo 1 - https://www.youtube.com/watch?time_continue=1&v=jSnLOoGjQ80&feature=emb_logo 
