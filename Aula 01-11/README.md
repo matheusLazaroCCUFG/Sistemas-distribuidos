@@ -130,7 +130,7 @@ Implementar PUT ou PATH para atualizar questionários existentes.
 
 # 6.1 - [1/2 semana] Tratamento de erros
 ## Tratamento de erros
-
+<u>semana 22/01</u><br/>
 
 <br/>
 <hr/>
