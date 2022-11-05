@@ -1,96 +1,245 @@
-# Anotações 
-Texto 1 - https://medium.com/baseds/many-nodes-one-distributed-system-9921f85205c4
-Vídeo 1 - https://www.youtube.com/watch?time_continue=1&v=jSnLOoGjQ80&feature=emb_logo 
+# Cronograma de implementação - parte 1
 
-Para o dia 01/11 tragam:
-1.   os times e os projetos;
-Trello: https://trello.com/w/sistemasdistribuidos36
-## Time: 
-    MATHEUS LÁZARO HONÓRIO DA SILVA
-    JOSE TEIXEIRA MENDES JUNIOR
-    IGOR MATEUS FRANCA DINIZ LOVI
-    Marcos Rodrigues
-## Projeto:
-Desenvolver um Web Service multiusuário para criar e resolver questionários usando uma API REST, um banco de dados incorporado, segurança e possível interface de usuário (Web ou móvel).
+## Estudo e implementação da API, na arquitetura RESTFUL e implementação com Spring Boot
+33.1 - Evolução dos micro serviços na internet
+33.2 - Integração de projetos com API REST ou Microserviços
+33.3 - Métodos HTTP de solicitação de requisição
+33.4 - Sistemas Amarrados
+33.5 - Sistemas em arquitetura REST
+33.6 - Modelagem correta de URIs
+33.7 - 6 Regras da da API RESTful verdadeira
+33.8 - Baixando a IDE Spring Tools Suite STS
+33.9 - Criando e configurando um projeto Spring Boot
+33.10 - Criando o primeiro controller e serviço RESTfull
+33.11 - Passando parâmetros para o serviço RESTfull
+33.12 - Retornando usuário em JSON para a tela
+33.13 - Criando serviço RESTful de consulta de usuário
+33.14 - Customizando métodos RESTful e URLs
+33.15 - Baixando e Instalando o PostMan e testando GET
+33.16 - Criando nosso serviço POST e efetuando um cadastro de usuário
+33.17 - Criando a atualização de cadastro com o PUT
+33.18 - Criando a remoção com DELETE
 
-### Descrição:
-1. Criação de modelo cliente-servidor, onde o cliente pode ser um navegador, uma ferramenta como o Curl, ou alguma interface de testes como o Postman.
-2. Desenvolvimento back-end com contrução de um banco de dados integrado.
-3. Utilização do framework Spring Boot para implementação e testes.
+# 1) Desenvolver uma API Restful JSON que retorne um quiz a ser resolvido. 
+* Implementar a obtenção do questionário, com três campos: "titulo" (string), texto (string) e "opcoes" (array). Para obter o questionário, o cliente deve enviar uma solicitação GET.
 
-### Etapas do projeto:
-1. Desenvolvimento de uma API REST JSON que crie ou retorne um Quiz (Questionário) a ser resolvido, suportando a obtenção do Quiz e a solução dele passando-se uma resposta. Podendo ser múltiplos questionários.
-2. Impedimento de criação de questionário inconsistente.
-3. Criação do banco de dados para armazenamento e manipulação dos questionários.
-4. Criação de serviço de suporte aos usuários e processo de autorização. Criação de privilégios a usuários, com cadastro de usuário e exclusão de questionário criado pelo usuário logado.
-5. Mecanismo de Atualização dos questionários, através de PUT e PATCH.
-6. Criação de paginação ao obter questionários.
-7. Obter todas as conclusões de questionários com paginação.
-8. Proteção de conexão utilizando protocolo HTTPS.
-
-### Outros possíveis tópicos de sistemas distribuídos a serem aplicados
-1. Computação móvel através de criação da interface.
-2. Implementação de um cliente de e-mail para informe de resultado dos questionários, com algum protocolo (como o SMTP, por exemplo).
-
-### Tecnologias:
-* Spring Framework
-* IDE: Eclipse
-* Servidor: Tomcat
-* Analisador de API: Postman
+* Implementar a resolução do questionário, em que o cliente precisa passar o campo "resposta" como parâmetro, usando uma requisição POST, com conteúdo como parâmetro "resposta" e valor.<br/>
 <br/>
 <hr/>
 
-## Perguntas e respostas da aula
-### 1) 3 destaques no texto para uma discussão (pode ser por time)
-*  https://medium.com/baseds/many-nodes-one-distributed-system-9921f85205c4
+## 2) Melhorar o Webservice para criar, obter e resolver múltiplos questionários, não apenas um. Armazenamento em memória do serviço, sem armazenamento externo.
+* Implementar a criação de um novo questionário, passando um JSON como corpo da solicitação via POST.
+* Implementar a obtenção de questionário por "id"
+* Implementar a obtenção de todos os questionários existentes no serviço.<br/>
+* Implementar a resolução de determinado questionário. O cliente enviará uma solicitação POST e passar o parâmetro "resposta". Esse parâmetro será o índice de uma solicitação escolhida do array "opcoes".<br/>
+<hr/>
+
+## 3)  Corrigir o serviço para que não aceite questionários incorretos. Tornar os questionários mais interessantes, com número arbitrário de opções correatas (zerou ou todas). O cliente poderá enviar todas as opções corretas de uma vez, ou zero se todas as opções estiverem erradas.<br/>
+
+<hr/>
+* Implementar na solução do questionário, na requsição POST, com o JSON que contém os índices de todas as opções escolhidas como resposta.
+<hr/>
+
+## 4) Implementar limite de tempo para responder questionário.
+## 5) Implementar perguntas aleatórias
+## 6) Implementar questionário de resposta curta de texto.
+## 7) Mover os questionários para o banco de dados.
+* Armazenar permanentemente os dados em um banco de dados, para que após reinício do serviõ, não perca todos os questionários criados pelos usuários.
+
+## Análise de estrutura hierárquica do projeto, com relacionamento em banco de dados.
+33.24 - Criando Relacionamento um para muitos
+33.25 - Evitando recursividade e gerando o JSON de pai e filhos
+33.26 - Cadastrando novos usuários telefones no END-POINT
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+
+## Tratamento de erros
+33.27 - Implementando o END-POINT de atualização
+33.29 - Testando a API com PostMan e identificando erros
+
+## Controle de segurança e acesso a requisições por diferentes servidores, na API 
+33.30 - Cross Origin - Controle de acesso a API
+33.31 - Cross Origin - Testando a requisição GET e AJAX
+33.32 - Cross Origin - Configuração em controler especifico
+33.33 - Cross Origin - Configuração em END-POINT especifico
+33.34 - Cross Origin - Configuração centralizada
+33.35 - Cross Origin - Testanto a liberacao da API
+
+## Parte 1 de Autenticação - Autenticação de usuário no sistema para acessar as requisições da API
+33.36 - Spring Security - Configurando ROLE
+33.37 - Spring Security - Configurando Usuário
+33.38 - Spring Security - Configurando o Repository e o Service
+33.39 - Spring Security - Configurando o Spring Security
+
+## 8) Autorização dos usuários. Acesso público ou privado
+* Melhorar o serviço de suporte aos usuários, e o processo de autorização. Fornecer diferentes privilégios aos usuários, entendendo o que eles fazem no serviço.<br/>
+Operações a serem adicionadas:
+1) Cadastrar novo usuário, que aceita e-mail com login e senha.
+2) Exclusão de questionário, criado pelo usuário atual.<br/>
+
+Implementçaão de acessibilidade dessas operações. Para realizar qualquer operação com questionários (criar, resolver, obter um, obter todos, deletar), o usuário deverá estar cadastrado e autorizado via HTTP Basic Auth, enviando seu e-mail e senha para cada solicitação. Caso contrário, o serviço retornará o erro. A única operação que não requer autorização será o registro.<br/>
+* Não armazenar a senha real no banco de dados. Configurar a criptografia de senha usando alguma biblioteca ou algoritmo.
+
+* Implementar o registro de usuário:<br/>
+Enviar uma solicitação via JSON com email e senha.
+
+* Excluir. O usuário poderá excluir um questionário enviando uma requisição DELETE.
+
+<hr/>
+Outras implementões<br/>
+Implementar PUT ou PATH para atualizar questionários existentes.
+<hr/>
+
+## 9) Implementar consultas avançadas.<br/>
+Obter todos os questionários com paginação. O cliente enviará uma solicitação GET. A API deverá retornar uma quantidade limitada de questionários de uma vez, e suportar a capacidade de especificar qual parte dos questionário é necessária.<br/>
+
+* Obter todas as conclusões de questionários com paginação. O serviço fornecerá uma nova operação para obter todas as conclusões de questionários para um usuário especificado enviando um solicitação GET  juntamente com os dados de autenticação do usuário. Classificar as conclusões da mais recente para a mais antiga.
+
+35.44 - Paginação e desempenho com front e back end
+<hr/>
+
+<br/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+
+
+## Parte 2 de Autenticação - Configuração de Token de acesso na API
+33.40 - JSON Web Token (JWT) - Introdução ao JWT
+33.41 - JSON Web Token (JWT) - Funcionamento e estrutura
+33.42 - JSON Web Token (JWT) - Aparência e padrão de uso
+33.43 - JSON Web Token (JWT) - Estrutura de classes do projeto
+33.44 - JSON Web Token (JWT) - Criando a classe JwtTokenAutenticacaoService
+33.45 - JSON Web Token (JWT) - Criando a classe JwtLoginFilter
+33.46 - JSON Web Token (JWT) - Criando a classe JwtApiAutenticacaoFilter
+33.47 - JSON Web Token (JWT) - Testando a autenticação do JSON
+33.48 - JSON Web Token (JWT) - Ententendo a geração do JWT
+33.49 - JSON Web Token (JWT) - Consultando e Deletando
+33.50 - JSON Web Token (JWT) - Cadastrando e editando
+33.51 - JSON Web Token (JWT) - Restringindo dados do usuário
+33.52 - JSON Web Token (JWT) - Atualizando senha do usuário
+
+## Estudo sobre versionamento de API
+33.53 - Versionamento de API
+
+## Estudo sobre performance 1 - POOL de conexões de servidor para resolver possível lentidão
+33.54 - Pool de conexão com Hikari
+## Estudo sobre performance 2 - Implementação de Cache para performance
+33.55 - Implementando o cache para performance
+33.56 - Conhecendo diferença entre CacheEvict e o CachePUT
+
+## Autenticação com token em banco de dados
+33.57 - JSON Web Token (JWT) - Autenticação com TOKEN em banco de dados
+
+
+## Tratamento de erros
+33.58 - Liberação de CORS e Allow em Origin, Headers , Methods e Request
+33.59 - Controle de erros da API com @ControllerAdvice, @RestControllerAdvice e @ExceptionHandler
+33.60 - Controle de erros da API - Parte 2
+33.61 - Tratamento do TOKEN Expirado
+33.62 - Padrão DTO (Data Transfer Object) dentro de uma API ou projeto
+33.63 - Atualizando TOKEN em novo login
 <br/>
 
-* <u>Destaque 1</u> - Conceito de "Computação distribuída":<br/> A Computação distribuída geralmente envolve a resolução de problemas, a divisão das coisas em tarefas discretas e a descoberta de como manipular, armazenar e processar dados.
-* <u>Destaque 2</u> - Definição de um sistema distribuído:<br/>Contanto que todos os processos em um sistema sejam autônomos ou capazes de realizar suas próprias operações, enquanto também são capazes de se comunicar com outros processos no sistema, podemos classificar o sistema como distribuído.
-* <u>Destaque 3</u> - se o sistema envolve processos conversando entre si, então talvez as entidades sejam apenas “processos”.
-* <b> Considerando que o nosso projeto busca desenvolver uma API REST de manipulação de Questionários com usuários, podemos considerar que os verbos HTTP implementados servirão para manipular processos, que serão salvos em banco de dados.<br/>
-Do ponto de vista das entidades individuais, os nós do nosso sistema serão os usuários, os questionários e, mais intrinsecamente as opções e respostas. (fazendo uma analogia à Teoria dos grafos).</b>
-<br/>
 
-### 2) 3 destaques no vídeo para uma discussão (pode ser por time)
-* Vídeo 1 - https://www.youtube.com/watch?time_continue=1&v=jSnLOoGjQ80&feature=emb_logo
-<br/>
+## 10) Implementar a interface gráfica
+35.32 - Conhecendo o padrão Model - DAO e Controller
 
-Destaque 1 -<br/> Arquitetura de desenvolvimento para microsserviços
-O vídeo começa tratando sobre a diferença entre microsserviços e "grandes serviços", como por exemplo o SOAP.
-Nesse contexto, podemos tratar sobre a evolução dos microsserviços na intenet:
+35.1 - Loja de Livros com AngularJS e Spring RESTful
+35.2 - Download e apresentação do projeto completo que será desenvolvido
+35.3 - Importando o projeto no Eclipse e configurando.
+35.4 - Como corrigir erros provenientes da importação de projetos e se livrar do X vermelho
+35.5 - Criando o banco de dados e subindo o sistema
+35.6 - Introdução ao AngularJS 1.6
+35.7 - Criando um projeto AngularJS
+35.8 - Propriedades do AngularJS
+35.9 - Criando um formulário simples em AngularJS
+35.10 - Finalizando um formulário simples em AngularJS
+35.11 - Correção para as próximas aulas
+35.12 - Expressões em AngularJS
+35.13 - Diretivas no AngularJS
+35.14 - Filters em AngularJS
+35.15 - O que são services em AngularJS
+35.16 - Usando o Http e conhecendo o ajax com AngularJS
+35.17 - Montando tabelas de dados
+35.18 - Criando o componente Select com AngularJS e Html
+35.19 - Entendendo sobre o DOM
+35.20 - Conhecendo o Resources Ajax com AngularJS
+35.21 - Conhecendo um pouco de Events no AngularJS
+35.22 - Validando formulários
+35.23 - Animações nas páginas
+35.24 - Formatando um campo de moeda com AngularJS
+35.25 - Conhecendo a injeção de dependência com AngularJS
+35.26 - Criando filter em tabelas de dados
+35.27 - Instalando o Layout BootStrap em nosso projeto
+35.28 - Testando as Rotas do AngularJS
+35.29 - Criando e conhecendo DataSource no Tomcat Apache
+35.30 - Configurando o Hibernate
+35.31 - Configurando o Spring Frameworks
+<hr/>
+Back-end modificações
+35.32 - Conhecendo o padrão Model - DAO e Controller
 
-Sistemas que trocam informações tinham a mesma rotina escrita várias vezes por equipes diferentes (o que gerava uma bagunça na troca de informações).
-A comunicação em XML usando SOAP é extremamente complexa. Dessa forma, surgiu a arquitetura REST, e em sequência a RESTful Microserviços com responsabilidades definidas.
+35.33 - Iniciando a criação da lista de cliente
 
-Com isso, cabe destacar sobre a diferença entre sistemas amarrados e a arquitetura REST
-Sistemas amarrados, têm:<br/>
-a)  a reutilização do back-end não são acessíveis a mais de uma tecnologia.<br/>
-b) Consumo alto do servidor.<br/>
-c) Manutenção complicada.<br/>
-d) Defícil escalar essa aplicação.<br/>
-e) Difícil criar instâncias diferentes em servidores.<br/>
-Outros...
-A arquitetura REST resolve o problema da troca de informação entre sistemas e a amarração entre Front-End e Back-End.
-* Outro ponto a ser considerado é que a arquitetura REST permite que todo o Front seja trocado, sem que serja necessário trocar o Back-End, e vice-versa.
+35.34 - Iniciando a criação da lista de cliente - Parte 2
 
-Destaque 2 - "As várias carinhas para microsserviços", por exemplo a arquitetura RESTful de requisições HTTP com JSON
-* Regras de um sistema RESTful
-1. Tem que existir dois papeis, o cliente e o servidor.
-2. Stateless: o sistema não pode ter sessões amarradas/criadas para o cliente e as requisições tem que ser realizado em todos os dados do processo, e a resposta ser completa.
-3. Precisa permitir que o cache seja feito caso necessário.
-4. Interface uniforme: a API não pode fazer distinção de clientes, não pode diferenciar e processar algo diferente para navegador, desktop ou mobile.
-5. Sistemas em camadas, entre o cliente e a API devem ser possíveis de se adicionar algum serviço como log da aplicação.
-6. Código sobre demanda, por exemplo, javascript, importado direto do servidor da API.
+35.35 - Iniciando o cadastro de clientes
 
-Destaque 3 - Vale a pena usar microsserviços no nosso projeto? monolito (único banco de dados) vs microsserviços
+35.36 - Editando o cliente e entendedo o RESTful
 
+35.37 - Adicionando notificação ao nosso sistema
 
+35.38 - Criando componentes
 
-Questionário para pesquisas transversais
+35.39 - Criando o select de cidades e estados
 
-Um questionário para uma pesquisa transversal é aquele administrado a uma pequena amostra dentro de um maior população em um curto espaço de tempo. Este tipo de questionário oferece ao pesquisador um breve resumo do que os entrevistados pensam sobre o tempo que a pesquisa é realizada. Esses questionários são comumente curtos e rápidos de responder e são muito úteis na hora de obter uma opinião de uma situação particular. Saiba mais em: O que é um estudo transversal?
+35.40 - Criando o select de cidades e estados - Parte 2
 
-Questionário para pesquisas longitudinais
+35.41 - Resolvendo problema com Google Chrome e o Select (Combo)
 
-Outro tipo de questionário são aqueles que são aplicados para estudos longitudinais, que ajudam os pesquisadores a observarem e coletarem dados por um longo período. Questionários desse tipo, focados em tendências, são implementados para entender a  mudança ou transformação de um processo por um longo período de tempo. Esses tipos de questionários são administrados para entender como a inclinação ou os gostos das pessoas mudam com o tempo.
+35.42 - Conhecendo o Jquery Mask
+
+35.43 - Criando o Upload de Imagens para nosso projeto
+
+35.44 - Paginação e desempenho com front e back end
+35.45 - Finando o cadastro de clientes
+35.46 - Iniciando o cadastro de fornecedores
+35.47 - Criando o cadastro de livros da nossa loja
+35.48 - Melhorando os cadastros criados
+35.49 - Iniciando a criação da loja de livros
+35.50 - Criando a loja de livros - Parte 2
+35.51 - Criando a loja de livros - Parte 3
+35.52 - Criando a loja de livros - Parte 4
+35.53 - Adicionando cliente a nossa loja de livros
+35.54 - Finalizar o pedido de nossa loja de livros
+35.55 - Imprimindo nosso pedido
+35.56 - Imprimindo nosso pedido - Parte 2
+35.57 - Corrigindo problemas em relatórios
+35.58 - Criando gráfico de pedidos com Google Chart
+
+35.62 - Escondendo parte com Ng-Hide
+35.63 - Separando os Controllers no AngularJS
+35.64 - UTF-8 e codificação de caracteres
+35.65 - Revisando as configurações do nosso projeto
+35.66 - Redirecionando de acordo com o perfil do usuário
+
+## 11) Implementar serviço de notificação ao cliente, para que informe o resultado dos questionários, com algum protocolo como o SMTP.
+
+## 12) Implementar o protocolo HTTPS de segurança
+
+## Instalação do projeto em hospedagem
+35.61 - Implantando nossa aplicação no servidor
+
+33.19 - Instalando o MAVEN em nosso computador
+33.20 - Configurando o contexto da nossa aplicação
+33.21 - Revisando configurações da versão do JDK
+33.22 - Gerando Jar executável da Aplicação Spring Boot
+33.23 - Gerando WAR e Implantando no Servidor
+33.28 - Implantando a API na hospedagem
