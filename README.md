@@ -23,10 +23,10 @@
 * Implementar a resolução de determinado questionário. O cliente enviará uma solicitação POST e passar o parâmetro "resposta". Esse parâmetro será o índice de uma solicitação escolhida do array "opcoes".<br/>
 <hr/>
 
-### 3)  Corrigir o serviço para que não aceite questionários incorretos. Tornar os questionários mais interessantes, com número arbitrário de opções correatas (zerou ou todas). O cliente poderá enviar todas as opções corretas de uma vez, ou zero se todas as opções estiverem erradas.<br/>
+### 3)  Corrigir o serviço para que não aceite questionários incorretos. Tornar os questionários mais interessantes, com número arbitrário de opções corretas (zerou ou todas). O cliente poderá enviar todas as opções corretas de uma vez, ou zero se todas as opções estiverem erradas.<br/>
 
 <hr/>
-* Implementar na solução do questionário, na requsição POST, com o JSON que contém os índices de todas as opções escolhidas como resposta.
+* Implementar na solução do questionário, na requisição POST, com o JSON que contém os índices de todas as opções escolhidas como resposta.
 <hr/>
 
 ### 4) Obter todos os questionários com paginação. O cliente enviará uma solicitação GET. A API deverá retornar uma quantidade limitada de questionários de uma vez, e suportar a capacidade de especificar qual parte dos questionário é necessária.
@@ -38,7 +38,7 @@ Classificar as conclusões da mais recente para a mais antiga.
 
 
 ### 7) Mover os questionários para o banco de dados.
-* Armazenar permanentemente os dados em um banco de dados, para que após reinício do serviõ, não perca todos os questionários criados pelos usuários.
+* Armazenar permanentemente os dados em um banco de dados, para que após o reinício do serviço, não perca todos os questionários criados pelos usuários.
 
 ### 8) Análise de estrutura hierárquica do projeto, com relacionamento em banco de dados.
 
@@ -64,7 +64,7 @@ Operações a serem adicionadas:
 1) Cadastrar novo usuário, que aceita e-mail com login e senha.
 2) Exclusão de questionário, criado pelo usuário atual.<br/>
 
-Implementçaão de acessibilidade dessas operações. Para realizar qualquer operação com questionários (criar, resolver, obter um, obter todos, deletar), o usuário deverá estar cadastrado e autorizado via HTTP Basic Auth, enviando seu e-mail e senha para cada solicitação. Caso contrário, o serviço retornará o erro. A única operação que não requer autorização será o registro.<br/>
+Implementação de acessibilidade dessas operações. Para realizar qualquer operação com questionários (criar, resolver, obter um, obter todos, deletar), o usuário deverá estar cadastrado e autorizado via HTTP Basic Auth, enviando seu e-mail e senha para cada solicitação. Caso contrário, o serviço retornará o erro. A única operação que não requer autorização será o registro.<br/>
 * Não armazenar a senha real no banco de dados. Configurar a criptografia de senha usando alguma biblioteca ou algoritmo.
 
 * Implementar o registro de usuário:<br/>
@@ -73,7 +73,7 @@ Enviar uma solicitação via JSON com email e senha.
 * Excluir. O usuário poderá excluir um questionário enviando uma requisição DELETE.
 
 <hr/>
-Outras implementões<br/>
+Outras implementações<br/>
 Implementar PUT ou PATH para atualizar questionários existentes.
 <hr/>
 
