@@ -48,7 +48,10 @@
 * Implementar na solução do questionário, na requsição POST, com o JSON que contém os índices de todas as opções escolhidas como resposta.
 <hr/>
 
-## 4) Implementar limite de tempo para responder questionário.
+## 4) Obter todos os questionários com paginação. O cliente enviará uma solicitação GET. A API deverá retornar uma quantidade limitada de questionários de uma vez, e suportar a capacidade de especificar qual parte dos questionário é necessária.
+Obter todas as conclusões de questionários com paginação. O serviço fornecerá uma nova operação para obter todas as conclusões de questionários para um usuário especificado enviando um solicitação GET juntamente com os dados de autenticação do usuário.
+
+Classificar as conclusões da mais recente para a mais antiga.
 ## 5) Implementar perguntas aleatórias
 ## 6) Implementar questionário de resposta curta de texto.
 
