@@ -1,5 +1,10 @@
 # Cronograma de implementação - parte 1
 
+## Planejamento e pesquisa
+1. Requisitos
+2. Tecnologias
+3. Cronograma de estudos e implementação do projeto
+
 ## Estudo e implementação da API, na arquitetura RESTFUL e implementação com Spring Boot
 33.1 - Evolução dos micro serviços na internet
 33.2 - Integração de projetos com API REST ou Microserviços
@@ -43,6 +48,8 @@
 ## 4) Implementar limite de tempo para responder questionário.
 ## 5) Implementar perguntas aleatórias
 ## 6) Implementar questionário de resposta curta de texto.
+
+
 ## 7) Mover os questionários para o banco de dados.
 * Armazenar permanentemente os dados em um banco de dados, para que após reinício do serviõ, não perca todos os questionários criados pelos usuários.
 
@@ -57,9 +64,6 @@
 <hr/>
 <hr/>
 
-## Tratamento de erros
-33.27 - Implementando o END-POINT de atualização
-33.29 - Testando a API com PostMan e identificando erros
 
 ## Controle de segurança e acesso a requisições por diferentes servidores, na API 
 33.30 - Cross Origin - Controle de acesso a API
@@ -94,21 +98,6 @@ Outras implementões<br/>
 Implementar PUT ou PATH para atualizar questionários existentes.
 <hr/>
 
-## 9) Implementar consultas avançadas.<br/>
-Obter todos os questionários com paginação. O cliente enviará uma solicitação GET. A API deverá retornar uma quantidade limitada de questionários de uma vez, e suportar a capacidade de especificar qual parte dos questionário é necessária.<br/>
-
-* Obter todas as conclusões de questionários com paginação. O serviço fornecerá uma nova operação para obter todas as conclusões de questionários para um usuário especificado enviando um solicitação GET  juntamente com os dados de autenticação do usuário. Classificar as conclusões da mais recente para a mais antiga.
-
-35.44 - Paginação e desempenho com front e back end
-<hr/>
-
-<br/>
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-<hr/>
-
 
 ## Parte 2 de Autenticação - Configuração de Token de acesso na API
 33.40 - JSON Web Token (JWT) - Introdução ao JWT
@@ -125,6 +114,28 @@ Obter todos os questionários com paginação. O cliente enviará uma solicitaç
 33.51 - JSON Web Token (JWT) - Restringindo dados do usuário
 33.52 - JSON Web Token (JWT) - Atualizando senha do usuário
 
+## 9) Implementar consultas avançadas.<br/>
+Obter todos os questionários com paginação. O cliente enviará uma solicitação GET. A API deverá retornar uma quantidade limitada de questionários de uma vez, e suportar a capacidade de especificar qual parte dos questionário é necessária.<br/>
+
+* Obter todas as conclusões de questionários com paginação. O serviço fornecerá uma nova operação para obter todas as conclusões de questionários para um usuário especificado enviando um solicitação GET  juntamente com os dados de autenticação do usuário. Classificar as conclusões da mais recente para a mais antiga.
+
+35.44 - Paginação e desempenho com front e back end
+<hr/>
+
+<br/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+
+
+
+
+## Testes de controle de qualidade
+## Teste manuais
+## Testes de performance
+
 ## Estudo sobre versionamento de API
 33.53 - Versionamento de API
 
@@ -139,6 +150,9 @@ Obter todos os questionários com paginação. O cliente enviará uma solicitaç
 
 
 ## Tratamento de erros
+33.27 - Implementando o END-POINT de atualização
+33.29 - Testando a API com PostMan e identificando erros
+
 33.58 - Liberação de CORS e Allow em Origin, Headers , Methods e Request
 33.59 - Controle de erros da API com @ControllerAdvice, @RestControllerAdvice e @ExceptionHandler
 33.60 - Controle de erros da API - Parte 2
@@ -149,6 +163,8 @@ Obter todos os questionários com paginação. O cliente enviará uma solicitaç
 
 
 ## 10) Implementar a interface gráfica
+
+## 4) Implementar limite de tempo para responder questionário.
 35.32 - Conhecendo o padrão Model - DAO e Controller
 
 35.1 - Loja de Livros com AngularJS e Spring RESTful
@@ -230,9 +246,19 @@ Back-end modificações
 35.65 - Revisando as configurações do nosso projeto
 35.66 - Redirecionando de acordo com o perfil do usuário
 
+## Testes de interface
+
 ## 11) Implementar serviço de notificação ao cliente, para que informe o resultado dos questionários, com algum protocolo como o SMTP.
 
 ## 12) Implementar o protocolo HTTPS de segurança
+
+## Documentação da API - Visão geral
+
+## Documentação da API - conexão e autenticação
+
+## Documentação da API - Métodos da API
+
+## Documentação da API - Tratamento de erros
 
 ## Instalação do projeto em hospedagem
 35.61 - Implantando nossa aplicação no servidor
