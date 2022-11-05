@@ -1,4 +1,4 @@
-# Cronograma de implementação - parte 1
+# Cronograma de implementação
 
 # 1. Planejamento e pesquisa
 1.1 Requisitos<br/>
