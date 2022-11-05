@@ -10,7 +10,7 @@
 
 
 ### 1) Desenvolver uma API Restful JSON que retorne um quiz a ser resolvido. 
-* Implementar a obtenção do questionário, com três campos: "titulo" (string), texto (string) e "opcoes" (array). Para obter o questionário, o cliente deve enviar uma solicitação GET.
+* Implementar a obtenção do questionário. Para obter o questionário, o cliente deve enviar uma solicitação GET.
 
 * Implementar a resolução do questionário, em que o cliente precisa passar o campo "resposta" como parâmetro, usando uma requisição POST, com conteúdo como parâmetro "resposta" e valor.<br/>
 <br/>
