@@ -51,6 +51,8 @@ Classificar as conclusões da mais recente para a mais antiga.
 
 
 # 2.2 - [1 semana] Estudo e desenvolvimento - Controle de segurança da API
+1. Implementação do modelo de usuários no sistema; 
+
 <u>Semana 18/12</u>
 
 
