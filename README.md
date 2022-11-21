@@ -215,5 +215,9 @@ Aula 22/11/2022
 
 3. Captítulo 2 - Arquiteturas e paradigmas de comunicação de sistemas distribuídos
   * Qual arquitetura irá atender o problema do grupo?
+     - Cliente-servidor: implementação do protocolo de requisição-resposta, que envolverá a troca por pares de mensagens do cliente para o servidor,
+     e então do servidor de volta para o cliente. Através de requisições HTTP na arquitetura RESTful.
+<src src="https://user-images.githubusercontent.com/85274838/203180015-831c3210-aea7-43c8-88cb-d1d790aa01f9.png"/>
+
   * Qual paradigma de comunicação o grupo irá utilizar?
               
