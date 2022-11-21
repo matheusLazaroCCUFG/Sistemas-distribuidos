@@ -191,3 +191,12 @@ Implementar PUT ou PATH para atualizar questionários existentes.
 <hr/>
 <hr/>
 ## Instalação do projeto em hospedagem
+
+---------------------------------------------------------------------------------------------------
+Aula 22/11/2022
+1. Serviço em nuvem e justificativa
+- 
+
+3. Captítulo 2 - Arquiteturas e paradigmas de comunicação de sistemas distribuídos
+  * Qual arquitetura irá atender o problema do grupo?
+  * Qual paradigma de comunicação o grupo irá utilizar?
